@@ -18,6 +18,7 @@ func App() {
 	router := gin.Default()
 
 	router.GET("/", handler.GetAll)
+	router.GET("/:id", handler.FindById)
 
 	router.Run(":8787")
 }
