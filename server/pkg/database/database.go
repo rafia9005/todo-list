@@ -3,6 +3,7 @@ package database
 import (
 	"fmt"
 	"os"
+	"todo-list/internal/model/entity"
 
 	"gorm.io/driver/mysql"
 	"gorm.io/gorm"
@@ -22,6 +23,7 @@ func Connect() error {
 	}
 
 	DB = db
+	DB.AutoMigrate(&entity.Todo{})
 
 	fmt.Println("Success connect to DB")
 	return nil
