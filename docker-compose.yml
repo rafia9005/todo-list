@@ -1,0 +1,10 @@
+version: '3.8'
+
+services:
+  app:
+    build: .
+    image: todo-list/app:latest
+    container_name: tuxedolabs-website
+    ports:
+      - "3000:4173"
+    restart: unless-stopped
